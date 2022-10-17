@@ -10,12 +10,11 @@ require('dotenv').config({ // it puts the content to the "process.env" var. Syst
   path: '.env',
 });
 // and this to pass env vars to the JS application
-const DotenvPlugin = require('webpack-dotenv-plugin');
-
+const DotenvPlugin = require('webpack-dotenv-plugin');  
 module.exports = {
   configureWebpack: {
     plugins: [
-      new Dotenv()
+      new Dotenv({safe: false, systemvars: true})
     ]
   }
 }
